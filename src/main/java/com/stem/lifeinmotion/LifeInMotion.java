@@ -43,8 +43,10 @@ public class LifeInMotion extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 0));
         setName("Life In Motion"); // NOI18N
+        setResizable(false);
 
-        Panel.setBackground(new java.awt.Color(0, 0, 0));
+        Panel.setBackground(new java.awt.Color(255, 255, 255));
+        Panel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         Panel.setName("Life In Motion"); // NOI18N
 
         titleLabel.setBackground(new java.awt.Color(0, 0, 0));
@@ -53,11 +55,10 @@ public class LifeInMotion extends javax.swing.JFrame {
         titleLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         titleLabel.setText("Life In Motion Demo");
 
-        ageField.setBackground(java.awt.SystemColor.desktop);
         ageField.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        ageField.setForeground(new java.awt.Color(255, 0, 0));
         ageField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         ageField.setText("Client's Age");
+        ageField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
         ageField.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 ageFieldFocusGained(evt);
@@ -69,21 +70,18 @@ public class LifeInMotion extends javax.swing.JFrame {
 
         ageLabel.setBackground(new java.awt.Color(0, 0, 0));
         ageLabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        ageLabel.setForeground(new java.awt.Color(255, 0, 0));
         ageLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         ageLabel.setText("Age:");
 
         stepsLabel.setBackground(new java.awt.Color(0, 0, 0));
         stepsLabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        stepsLabel.setForeground(new java.awt.Color(255, 0, 0));
         stepsLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         stepsLabel.setText("Steps:");
 
-        stepsField.setBackground(java.awt.SystemColor.desktop);
         stepsField.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        stepsField.setForeground(new java.awt.Color(255, 0, 0));
         stepsField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         stepsField.setText("Client's Steps");
+        stepsField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
         stepsField.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 stepsFieldFocusGained(evt);
@@ -95,15 +93,13 @@ public class LifeInMotion extends javax.swing.JFrame {
 
         standingLabel.setBackground(new java.awt.Color(0, 0, 0));
         standingLabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        standingLabel.setForeground(new java.awt.Color(255, 0, 0));
         standingLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         standingLabel.setText("Time Standing:");
 
-        standingField.setBackground(java.awt.SystemColor.desktop);
         standingField.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        standingField.setForeground(new java.awt.Color(255, 0, 0));
         standingField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         standingField.setText("Client's Standing Minutes");
+        standingField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
         standingField.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 standingFieldFocusGained(evt);
@@ -112,23 +108,26 @@ public class LifeInMotion extends javax.swing.JFrame {
                 standingFieldFocusLost(evt);
             }
         });
+        standingField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                standingFieldActionPerformed(evt);
+            }
+        });
 
         smartScoreLabel.setBackground(new java.awt.Color(0, 0, 0));
         smartScoreLabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        smartScoreLabel.setForeground(new java.awt.Color(255, 0, 0));
         smartScoreLabel.setText("Smart Score: N/A");
 
         discountLabel.setBackground(new java.awt.Color(0, 0, 0));
         discountLabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        discountLabel.setForeground(new java.awt.Color(255, 0, 0));
         discountLabel.setText("Discount: N/A");
 
-        calculateButton.setBackground(java.awt.SystemColor.desktop);
+        calculateButton.setBackground(new java.awt.Color(255, 0, 0));
         calculateButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        calculateButton.setForeground(new java.awt.Color(255, 0, 0));
+        calculateButton.setForeground(new java.awt.Color(255, 255, 255));
         calculateButton.setText("Calculate");
-        calculateButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 0, 0), 2));
-        calculateButton.setContentAreaFilled(false);
+        calculateButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 0, 0)));
+        calculateButton.setBorderPainted(false);
         calculateButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         calculateButton.setFocusPainted(false);
         calculateButton.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -148,22 +147,25 @@ public class LifeInMotion extends javax.swing.JFrame {
             .addGroup(PanelLayout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(smartScoreLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(PanelLayout.createSequentialGroup()
+                        .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(smartScoreLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(discountLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(PanelLayout.createSequentialGroup()
                         .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(ageLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(stepsLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 128, Short.MAX_VALUE))
                             .addComponent(standingLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(35, 35, 35)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(standingField, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(stepsField, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ageField, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(discountLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(ageField, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(standingField, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(70, 70, 70))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelLayout.createSequentialGroup()
-                .addContainerGap(162, Short.MAX_VALUE)
+                .addContainerGap(160, Short.MAX_VALUE)
                 .addComponent(calculateButton, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(150, 150, 150))
         );
@@ -172,25 +174,25 @@ public class LifeInMotion extends javax.swing.JFrame {
             .addGroup(PanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(titleLabel)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                 .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ageLabel)
-                    .addComponent(ageField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(ageField, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(stepsLabel)
-                    .addComponent(stepsField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(stepsField, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(standingLabel)
-                    .addComponent(standingField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(106, 106, 106)
+                    .addComponent(standingField, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(90, 90, 90)
                 .addComponent(smartScoreLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(discountLabel)
                 .addGap(74, 74, 74)
                 .addComponent(calculateButton, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(87, Short.MAX_VALUE))
+                .addContainerGap(81, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -298,6 +300,10 @@ public class LifeInMotion extends javax.swing.JFrame {
                     javax.swing.JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_calculateButtonMousePressed
+
+    private void standingFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_standingFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_standingFieldActionPerformed
 
     /**
      * @param args the command line arguments
