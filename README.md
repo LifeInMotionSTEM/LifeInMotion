@@ -15,4 +15,4 @@ Inspired by [State Farm Drive Safe & Save®](https://www.statefarm.com/insurance
 ## Contributors
 - Sam Burrell
 - Gavin Hutchison
-- Ian West
+- Ian West ([@task0001](https://github.com/task0001))
