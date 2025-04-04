@@ -1,6 +1,6 @@
 # Life in Motion
 
-This project is part of the State Farm STEM Challenge.
+This project is part of the 2025 State Farm STEM Challenge.
 
 ## Goal
 Inspired by [State Farm Drive Safe & Save®](https://www.statefarm.com/insurance/auto/discounts/drive-safe-save), Life in Motion is an application designed with the goal of improving the consumer's physical health and reduce liability for life insurance providers. 
